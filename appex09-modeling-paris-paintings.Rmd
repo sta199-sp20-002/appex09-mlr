@@ -1,0 +1,33 @@
+---
+title: "AppEx 09: Modeling Paris Paintings"
+author: "Your name here"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(broom)
+library(knitr)
+```
+
+```{r load-data, message=FALSE}
+paris_paintings <- read_csv("data/paris_paintings.csv", na = c("n/a", "", "NA"))
+```
+
+## Task 1
+
+Fit a multiple linear regression model with the following main effects: `lrgfont`, `Height_in`, `Width_in`, and `relig`.
+
+Interpret each of the estimated model coefficients.
+
+## Task 2
+
+Fit a multiple linear regression model with main effects for `Height_in` and `lrgfont`, as well as their interaction.
+
+What is the model equation for paintings where the dealer devotes an additional paragraph? How about for paintings where the dealer does NOT devote an additional paragraph?
